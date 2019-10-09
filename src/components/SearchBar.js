@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 
+
 class SearchBar extends Component {
 
   constructor(props){
@@ -19,13 +20,17 @@ class SearchBar extends Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+  }
+
   render(){
     return(
     <div className='search' >
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input type='text' name='search' 
         placeholder='Fake-tube and chill...'
-        value={this.state.search} />
+        value={this.state.search} onChange={this.handleChange}/>
         <input type='submit' value='Search'/>
       </form>
     </div>
