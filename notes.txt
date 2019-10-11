@@ -1,0 +1,13 @@
+Assignment:
+Build a single page application using React.js which mimics the functionality of YouTube.
+The application should have a Search Bar to search for videos along with a Video Frame to render and view the video.
+There should also be a Video List of related/playlist videos and a Video Description containing the description of the video.
+
+User should be able to enter search term and view all related videos from the YouTube Search API : https://developers.google.com/youtube/v3/docs/search
+• Major components needed: 
+  o Search bar
+  o Video list
+  o Video frame using iFrame
+  o Video description (as shown in the screenshot below)
+  
+• User should be able to click and watch a video from the list of related video
