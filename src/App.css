@@ -17,3 +17,13 @@ input#searchbar{
   width: 35%;
   text-align: center;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.span-col-3{
+    grid-column: span 3 / auto;
+  }
