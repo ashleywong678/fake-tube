@@ -1,15 +1,13 @@
 //libraries
 import React, {Component} from 'react';
 import YouTube from 'react-youtube';
-import axios from 'axios'
+import YTSearch from 'youtube-api-search'
 import './App.css';
 
 //components
 import SearchBar from './components/SearchBar'
-import youtube from './apis/youtube'
 import VideoList from './components/VideoList';
 import VideoDetail from './components/VideoDetail';
-// import youtube from './apis/youtube'
 
 class App extends Component {
   state = {
@@ -17,18 +15,33 @@ class App extends Component {
     currentVideo: null
   }
 
-  handleSubmit = async (searchBarInput) => {
-
+  handleSubmit = (searchBarSearch) => {
+    YTSearch({
+      part: 'snippet',
+      maxResults: 10,
+      key: 'AIzaSyDIEenGu5OOX62CJkvnS79NIVaWXSXFG6U', 
+      term: searchBarSearch}, 
+      (videos) => {
+        this.setState({
+          videos: videos,
+          selectedVideo: videos[0]
+       })
+    })
   }
-  // handleSearchSubmit=-{this.handleSubmit}/> {/* sends handleSubmit function to searchbar component */}
 
   render(){
     return (
       <div className="App">
-        <header className="App-header">
           <h1>FakeTube</h1>
-        </header>
-          <SearchBar />
+          <SearchBar handleSearchSubmit={this.handleSubmit}/>
+          <div class='grid'>
+            <div class='span-col-3'>
+              <CurrentVideo />
+            </div>
+            <div>
+              <VideoList />
+            </div>
+          </div>
       </div>
     );
     }
