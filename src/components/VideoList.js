@@ -1,10 +1,12 @@
 import React from 'react';
 import VideoListCard from './VideoListCard'
 
-const VideoList = () => {
-
+const VideoList = ({videos, handleVideoSelect}) => {
+  
   return(
-    <div>My list of videos</div>
+    <span className='list'>
+      My list of videos
+    </span>
   )
 
 }
