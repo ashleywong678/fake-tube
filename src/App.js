@@ -1,6 +1,6 @@
 //libraries
 import React, {Component} from 'react';
-import YouTube from 'react-youtube';
+import YouTube from 'react-youtube'
 import YTSearch from 'youtube-api-search'
 import './App.css';
 
@@ -29,17 +29,17 @@ class App extends Component {
     })
   }
 
+  handleVideoSelect = (video) => {
+    this.setState({currentVideo: video})
+  }
+
   render(){
     return (
       <div className="App">
           <h1>FakeTube</h1>
           <SearchBar handleSearchSubmit={this.handleSubmit}/>
-          <div class='grid'>
-            <div>
-              <CurrentVideo />
-            </div>
-            <VideoList />
-          </div>
+          <CurrentVideo />
+          <VideoList videos={this.state.videos} handleVideoSelect={this.handleVideoSelect} />
       </div>
     );
     }
