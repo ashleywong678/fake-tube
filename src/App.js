@@ -7,7 +7,7 @@ import './App.css';
 //components
 import SearchBar from './components/SearchBar'
 import VideoList from './components/VideoList';
-import VideoDetail from './components/VideoDetail';
+import CurrentVideo from './components/CurrentVideo';
 
 class App extends Component {
   state = {
@@ -35,12 +35,10 @@ class App extends Component {
           <h1>FakeTube</h1>
           <SearchBar handleSearchSubmit={this.handleSubmit}/>
           <div class='grid'>
-            <div class='span-col-3'>
+            <div>
               <CurrentVideo />
             </div>
-            <div>
-              <VideoList />
-            </div>
+            <VideoList />
           </div>
       </div>
     );
