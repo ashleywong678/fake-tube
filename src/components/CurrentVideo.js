@@ -6,7 +6,7 @@ const CurrentVideo = ({video}) => {
 
   return(
     <div className='current'>
-      <iframe className='embed-responsive-item' src={url} />
+      <iframe className='video-frame' src={url} />
       <p className='description'>{video.snippet.description}</p>
     </div>
   )
