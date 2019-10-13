@@ -1,6 +1,6 @@
 //libraries
 import React, {Component} from 'react';
-import YouTube from 'react-youtube'
+// import YouTube from 'react-youtube'
 import YTSearch from 'youtube-api-search'
 import './App.css';
 
@@ -8,6 +8,8 @@ import './App.css';
 import SearchBar from './components/SearchBar'
 import VideoList from './components/VideoList';
 import CurrentVideo from './components/CurrentVideo';
+
+const API_KEY = 'AIzaSyDIEenGu5OOX62CJkvnS79NIVaWXSXFG6U'
 
 class App extends Component {
   state = {
@@ -17,9 +19,7 @@ class App extends Component {
 
   handleSubmit = (searchBarSearch) => {
     YTSearch({
-      part: 'snippet',
-      maxResults: 10,
-      key: 'AIzaSyDIEenGu5OOX62CJkvnS79NIVaWXSXFG6U', 
+      key: API_KEY, 
       term: searchBarSearch}, 
       (videos) => {
         this.setState({
@@ -38,7 +38,7 @@ class App extends Component {
       <div className="App">
           <h1>FakeTube</h1>
           <SearchBar handleSearchSubmit={this.handleSubmit}/>
-          <CurrentVideo video={this.state.currentVideo}/>
+          {this.state.currentVideo ? <CurrentVideo video={this.state.currentVideo}/> : null}
           <VideoList videos={this.state.videos} handleVideoSelect={this.handleVideoSelect} />
       </div>
     );
