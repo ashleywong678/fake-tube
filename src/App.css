@@ -34,12 +34,26 @@ input#searchbar{
   border-color: #e3e3e3;
   width: 25%;
   float: right;
+  margin: 10px;
 }
 
 .current{
   width: 60%;
+  height: 500px;
   margin: 30px;
   display: inline-block;
+}
+
+.video-frame{
+  width: 100%;
+  height: 100%;
+}
+
+.description{
+  padding: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e3e3e3;
 }
 
 .list-card{

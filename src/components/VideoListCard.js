@@ -15,4 +15,5 @@ const VideoListCard = ({video, handleVideoSelect}) => {
     </div>
   )
 }
+    
 export default VideoListCard
