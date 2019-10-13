@@ -29,10 +29,9 @@ input#searchbar{
   }
 
 .list{
-  border-style: solid;
   border-width: 1px;
-  padding: 5px;
-  border-radius: 3px;
+  border-style: solid;
+  border-color: #e3e3e3;
   width: 25%;
   float: right;
 }
@@ -41,4 +40,23 @@ input#searchbar{
   width: 70%;
   border-style: solid;
   border-width: 1px;
+  border-radius: 3px;
+}
+
+.list-card{
+  border-bottom: 1px solid #e3e3e3;
+  padding: 7px;
+}
+
+.list-pic {
+  width: 150px;
+  padding: 5px;
+  display: inline;
+}
+
+.list-title{
+  width: 225px;
+  display: inline-block;
+  margin-left: 2px;
+  padding-top: 5px;
 }
