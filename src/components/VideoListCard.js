@@ -1,9 +1,13 @@
 import React from 'react'
 
 const VideoListCard = ({video, handleVideoSelect}) => {
-console.log(video)
+
+  const handleSubmit = () => {
+    handleVideoSelect(video)
+  }
+
   return(
-    <div className='list-card' onClick={() => handleVideoSelect(video)}>
+    <div className='list-card' onClick={handleSubmit}>
       <img className='list-pic' src={video.snippet.thumbnails.medium.url} alt={video.snippet.description} />
       <div className='list-title'>
         {video.snippet.title}
