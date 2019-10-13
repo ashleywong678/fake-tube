@@ -3,10 +3,14 @@ import VideoListCard from './VideoListCard'
 
 const VideoList = ({videos, handleVideoSelect}) => {
   
+  const videoList = videos.map((video) => {
+    return <VideoListCard key={video.id.videoId} video={video} handleVideoSelect={handleVideoSelect} />
+  })
+
   return(
-    <span className='list'>
-      My list of videos
-    </span>
+    <div className='list'>
+      {videoList}
+    </div>
   )
 
 }
