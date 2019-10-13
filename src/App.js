@@ -24,7 +24,7 @@ class App extends Component {
       (videos) => {
         this.setState({
           videos: videos,
-          selectedVideo: videos[0]
+          currentVideo: videos[0]
        })
     })
   }
@@ -38,7 +38,7 @@ class App extends Component {
       <div className="App">
           <h1>FakeTube</h1>
           <SearchBar handleSearchSubmit={this.handleSubmit}/>
-          <CurrentVideo />
+          <CurrentVideo video={this.state.currentVideo}/>
           <VideoList videos={this.state.videos} handleVideoSelect={this.handleVideoSelect} />
       </div>
     );
