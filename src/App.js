@@ -9,8 +9,6 @@ import SearchBar from './components/SearchBar'
 import VideoList from './components/VideoList';
 import CurrentVideo from './components/CurrentVideo';
 
-const API_KEY = 'AIzaSyDIEenGu5OOX62CJkvnS79NIVaWXSXFG6U'
-
 class App extends Component {
   state = {
     videos: [],
